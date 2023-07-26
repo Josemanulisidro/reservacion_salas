@@ -24,6 +24,26 @@ body {
     
     /* Se muestra un color de fondo mientras se está cargando la imagen
     de fondo o si hay problemas para cargarla 
-    background-color: #66999;*/
+    background-color: #66999; */
     
+    @media screen and (max-width: 400px) 
+    {
+        body {
+            background-image: url('Bienvenido.jpg');
+        }
+    }
+
+    @media screen and (min-width: 401px) and (max-width: 800px) 
+    {
+        body {
+            background-image: url('Bienvenido.jpg');
+        }
+
+
+
+
+        
+    }
+
+
     }

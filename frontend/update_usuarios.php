@@ -10,11 +10,10 @@
 </head>
 <body>
     <?php
-     session_start();
-     $rol_usu = $_SESSION['id_rol1']; 
+     include('navegacion.php');
      if ($_SESSION['active']){
       if ($rol_usu == 1) {
-        include('navegacion.php');
+        
         include('../backend/conexion.php');
        
     $id_usu = $_POST['id_usu'];

@@ -14,6 +14,7 @@
 <body>
 <?php
  include('navegacion.php');
+    if ($_SESSION['active']) {
     //obtener todos los meses del año
     $meses = array("January","February","March","April","May","June","July", "August","September","October","November","December");
     $años = array("2023","2024","2025","2026","2027","2028","2029","2030","2031","2032");
@@ -160,6 +161,11 @@ echo "</tbody>";
 echo "</table>";
 echo "</div>";
 ?>
-    
+  
+<?php
+    }else{
+        include('../backend/salir.php');
+    }
+?>
 </body>
 </html>

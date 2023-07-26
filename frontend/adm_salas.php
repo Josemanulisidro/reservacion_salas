@@ -15,16 +15,8 @@
 </head>
 <body>
     <?php
-    session_start();
-    $id_usu = $_SESSION['id_usu'];
-    $nombre_usu = $_SESSION['nombre'];
-    $user_usu = $_SESSION['usuario'];
-    $passw_usu = $_SESSION['password']; 
-    $fecha_usu = $_SESSION['fecha'];
-    $rol_usu = $_SESSION['id_rol1']; 
-    $rol_usu = $_SESSION['id_rol1']; 
-    if ($_SESSION['active']) {
         include('navegacion.php');
+        if ($_SESSION['active']) {
         if ($rol_usu == 1) {
     include('../backend/salas.php');
     $salas = new Salas();

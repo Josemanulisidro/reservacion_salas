@@ -11,7 +11,6 @@
 <?php
    include('../backend/conexion.php');
     include('navegacion.php');
-    session_start();
     if ($_SESSION['active']) {
 
     if(isset($_POST['id_s'])){

@@ -11,20 +11,21 @@
 </head>
 <body>
     <?php
-     session_start();
-     $id_usu = $_SESSION['id_usu'];
-     $nombre_usu = $_SESSION['nombre'];
-     $passw_usu = $_SESSION['password'];
-     $fecha_usu = $_SESSION['fecha'];
-     $rol_usu = $_SESSION['id_rol1'];
-     $area = $_SESSION['area2'];
-     if ($_SESSION['active']) {
          include('navegacion.php');
+         if ($_SESSION['active']) {
          include('../backend/salas.php');
          include('../backend/reservaciones.php');
          $salas = new Salas();
          $reservaciones = new Reservaciones();
    ?>
+<button type="button" class="btn btn-primary btn-lg" id="cargar">Cargar pagina</button>
+<script>
+    var cargar = document.getElementById('cargar');
+    cargar.addEventListener('click', function(){
+        location.reload();
+    });
+</script>
+
 
 <div class="row sortable"  id="drop-items">
 <?php
@@ -61,8 +62,8 @@ while ($row = $result_salas->fetch_assoc()) {
                 break;
         }
     ?>
-    
-<div class="col-md-6 col-lg-4 mb-4" data-index="<?php echo $row['id_salas']; ?>" data-position="<?php echo $row['posicion']; ?>" style="border: red 5px dotted;">
+
+<div class="col-md-6 col-lg-4 mb-4" data-index="<?php echo $row['id_salas']; ?>" data-position="<?php echo $row['posicion']; ?>" id="cont_salas">
        <center><div class="drop__card" style="clip-path: polygon(0 24%, 51% 0, 100% 24%, 100% 100%, 0% 100%);font-size: 50px; width: 300px;  background-color:<?php echo $color ?>">
             <div class="drop__data font-size: 10px;">
                 <form action="reservar.php" method="POST">
@@ -97,8 +98,8 @@ while ($row = $result_salas->fetch_assoc()) {
     
                     <?php
                     
-                    if($rol_usu == 1 ){ 
-                        if($estatus_s1 == 1 ) {   
+                    if($rol_usu == 1 ){
+                        if($estatus_s1 == 1 ) {
                         ?>
                     <form action="../backend/delet_reservacion.php" method="POST">
                         <input type="hidden" name="id_reserv" value="<?php echo $id_reservacion;?>">

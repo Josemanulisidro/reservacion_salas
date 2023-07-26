@@ -22,9 +22,7 @@ if ($result > 0) {
 
 
     } else {
-        header("location:../frontend/loguin.php");
+        header("location:../frontend/login.php");
     }
-
-
 
 ?>

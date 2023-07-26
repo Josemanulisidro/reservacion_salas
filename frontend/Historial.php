@@ -21,10 +21,9 @@
     </style>
 <body>
 <?php
- session_start();
- $rol_usu = $_SESSION['id_rol1']; 
+;
+include('navegacion.php');
  if ($_SESSION['active']) {
-    include('navegacion.php');  
      if ($rol_usu == 1) {
      
     ?>

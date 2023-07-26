@@ -1,6 +1,6 @@
 <?php
 session_start();
-header("location: ../frontend/loguin.php");
+header("location: ../frontend/login.php");
 session_unset();
 session_destroy();
 

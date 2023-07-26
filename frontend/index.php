@@ -13,12 +13,6 @@
  
 <?php
      include("navegacion.php");
-     session_start();
-     $id_usu = $_SESSION['id_usu'];
-     $nombre_usu = $_SESSION['nombre'];
-     $passw_usu = $_SESSION['password'];
-     $fecha_usu = $_SESSION['fecha'];
-     $rol_usu = $_SESSION['id_rol1'];
         if ($_SESSION['active']) {
      ?>
  
